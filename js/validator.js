@@ -195,6 +195,15 @@ function gituwa(){
         }
     }
 
+    $("#myTable td:nth-child(1)").each(function (index) {
+        console.log('Row no. ' + (index+1) + ', Column 1 : ' + $(this).html());
+        if(nazwaTowaru.value == $(this).html()){
+            alert('Towar ' + $(this).html() + " juz zostal dodany!");
+            return;
+        }
+    });
+         
+
     var row = `
         <tr>
             <td>` + nazwaTowaru.value + `</td>
