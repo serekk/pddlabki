@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="js\validator.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="sticky-footer.css" rel="stylesheet">
+    <link href="sticky-navbar.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css\theme.green.css">
+    <!-- load jQuery and tablesorter scripts -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js\jquery.tablesorter.js"></script>
+    <!-- tablesorter widgets (optional) -->
+    <script type="text/javascript" src="js\jquery.tablesorter.widgets.js"></script>
+
+    <title>lab01</title>
+
+    <script>
+        $(function() {
+          $("#myTable").tablesorter();
+        });
+        </script>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">lab01</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="http://lcieszynski.zut.edu.pl/fileadmin/DPD/instrukcja_2019.pdf">instrukcja do
+                    laboratoriów</a>
+            </li>
+        </ul>
+
+        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#cartModal">
+            koszyk
+        </button>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-12 col-md-6 col-lg-2">
+                <p>smol left</p>
+            </div>
+
+            <div class="col-md-6 col-lg-8">
+                <form>
+
+                    <div class="form-group row">
+                        <label for="towar_name" class="col-sm-2 col-form-label">nazwa towaru</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="towar_name" onBlur="sprawdzTowarName()">
+                            <div id="towar_name_blad"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="input_code" class="col-sm-2 col-form-label">kod towaru</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input_code" onBlur="sprawdzInputCode()">
+                            <div id="input_code_blad"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="netto_price" class="col-sm-2 col-form-label">cena netto</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="netto_price" onBlur="sprawdzNettoPrice()">
+                            <div id="netto_price_blad"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputVAT" class="col-sm-2 col-form-label">stawka VAT</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputVAT" onBlur="obliczBrutto()">
+                            <div id="vat_blad"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputPriceBrutto" class="col-sm-2 col-form-label">cena brutto</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputPriceBrutto" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputCategory" class="col-sm-2 col-form-label">kategoria towarowa</label>
+                        <div class="col-sm-10">
+                            <select id="inputCategory" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputOptions" class="col-sm-2 col-form-label">opcje towaru</label>
+                        <!-- <div class="col-sm-10"> -->
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input checkboxOpcja" type="checkbox" id="inlineCheckbox1"
+                                value="option1" onclick="sprawdzCheckbox()">
+                            <label class="form-check-label" for="inlineCheckbox1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input checkboxOpcja" type="checkbox" id="inlineCheckbox2"
+                                value="option2" onclick="sprawdzCheckbox()">
+                            <label class="form-check-label" for="inlineCheckbox2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input checkboxOpcja" type="checkbox" id="inlineCheckbox3"
+                                value="option3" onclick="sprawdzCheckbox()">
+                            <label class="form-check-label" for="inlineCheckbox3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input checkboxOpcja" type="checkbox" id="inlineCheckbox4"
+                                value="option4" onclick="sprawdzCheckbox()">
+                            <label class="form-check-label" for="inlineCheckbox4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input checkboxOpcja" type="checkbox" id="inlineCheckbox5"
+                                value="option5" onclick="sprawdzCheckbox()">
+                            <label class="form-check-label" for="inlineCheckbox5">5</label>
+                        </div>
+
+                        <div id="optionFeedback" style="display: block;"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputRating" class="col-sm-2 col-form-label">ocena towaru</label>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input radioOpcja" type="radio" id="inlineRadio1" value="option1"
+                                name="rating">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input radioOpcja" type="radio" id="inlineRadio2" value="option2"
+                                name="rating">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input radioOpcja" type="radio" id="inlineRadio3" value="option3"
+                                name="rating">
+                            <label class="form-check-label" for="inlineRadio3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input radioOpcja" type="radio" id="inlineRadio4" value="option4"
+                                name="rating">
+                            <label class="form-check-label" for="inlineRadio4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input radioOpcja" type="radio" id="inlineRadio5" value="option5"
+                                name="rating">
+                            <label class="form-check-label" for="inlineRadio5">5</label>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="photo" class="col-sm-2 col-form-label">zdjęcie</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="photo" value="domyślne zdjęcie">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="button" class="btn btn-primary" onclick="gituwa()">dodaj do koszyka</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- tabela -->
+                <table id="myTable" class="tablesorter tablesorter-green">
+                    <thead>
+                      <tr>
+                        <th>nazwa towaru</th>
+                        <th>kod towaru</th>
+                        <th>cena netto</th>
+                        <th>stawka vat</th>
+                        <th>cena brutto</th>
+                        <th>kategoria towarowa</th>
+                        <th>opcje towaru</th>
+                        <th>ocena towaru</th>
+                        <th>zdjęcie</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+
+            </div>
+
+            <div class="col-lg-2">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img\corgi.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Corgi</h5>
+                        <p class="card-text">woof woof</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">woof</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">woof</a>
+                        <a href="#" class="card-link">woof?</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <span class="text-muted">Karol Samujło 2020 👀</span>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Koszyczek</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                    <button type="button" class="btn btn-primary">Zapisz zmiany</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
