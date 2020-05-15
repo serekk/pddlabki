@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script type="text/javascript" src="js\validator.js"></script>
+    <script type="text/javascript" src="js/validator.js"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -17,14 +18,12 @@
     <script type="text/javascript" src="js\jquery.tablesorter.js"></script>
     <!-- tablesorter widgets (optional) -->
     <script type="text/javascript" src="js\jquery.tablesorter.widgets.js"></script>
+    <script src="js/tablesorter.js"></script>
 
     <title>lab01</title>
 
     <script>
-        $(function() {
-          $("#myTable").tablesorter();
-        });
-        </script>
+    </script>
 </head>
 
 <body>
@@ -44,9 +43,26 @@
 
     <div class="container-fluid">
         <div class="row">
-
             <div class="col-xs-12 col-md-6 col-lg-2">
-                <p>smol left</p>
+                <div class="form-group rowt">
+                    <button type="button" class="btn btn-primary" id="sort-rating-dsc">ocena malejąco</button>
+                </div>
+                <div class="form-group rowt">
+                    <button type="button" class="btn btn-primary" id="sort-rating-asc">ocena rosnąco</button>
+                </div>
+                <div class="form-group rowt">
+                    <button type="button" class="btn btn-primary" id="sort-price-dsc">cena malejąco</button>
+                </div>
+
+                <div class="form-group rowt">
+                    <button type="button" class="btn btn-primary" id="sort-price-asc">cena rosnąco</button>
+                </div>
+                <div class="form-group rowt">
+                    <button type="button" class="btn btn-primary" id="sort-name-a">nazwa A</button>
+                </div>
+                <div class="form-group rowt">
+                    <button type="button" class="btn btn-primary" id="sort-name-z">nazwa Z</button>
+                </div>
             </div>
 
             <div class="col-md-6 col-lg-8">
@@ -185,21 +201,23 @@
                 <!-- tabela -->
                 <table id="myTable" class="tablesorter tablesorter-green">
                     <thead>
-                      <tr>
-                        <th>nazwa towaru</th>
-                        <th>kod towaru</th>
-                        <th>cena netto</th>
-                        <th>stawka vat</th>
-                        <th>cena brutto</th>
-                        <th>kategoria towarowa</th>
-                        <th>opcje towaru</th>
-                        <th>ocena towaru</th>
-                        <th>zdjęcie</th>
-                      </tr>
+                        <tr>
+                            <th>nazwa towaru</th>
+                            <th><span class="kodTowaru">kod towaru</span></th>
+                            <th>cena netto</th>
+                            <th><span class="stawkaVAT">stawka vat</span></th>
+                            <th>cena brutto</th>
+                            <th><span class="kategoriaTowarowa">kategoria towarowa</span></th>
+                            <th><span class="opcjeTowaru">opcje towaru</span></th>
+                            <th>ocena towaru</th>
+                            <th><span class="zdjecie">zdjęcie</span></th>
+                            <th><span class="usun">usuń</span></th>
+                            <th><span class="edytuj">edytuj</span></th>
+                        </tr>
                     </thead>
                     <tbody>
                     </tbody>
-                  </table>
+                </table>
 
             </div>
 

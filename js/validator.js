@@ -1,3 +1,4 @@
+var isDuplicateEntry = false;
 function sprawdzTowarName() {
     var formularz_obj = document.getElementById("towar_name");
     var t_name = formularz_obj.value;
@@ -116,7 +117,6 @@ function sprawdzCheckbox() {
         blad_danych = true;
 
     } else {
-        // feedback.innerHTML = "";
         feedback.classList.remove("invalid-feedback");
         feedback.classList.add("valid-feedback");
         blad_danych = false;
@@ -199,12 +199,13 @@ function gituwa(){
         console.log('Row no. ' + (index+1) + ', Column 1 : ' + $(this).html());
         if(nazwaTowaru.value == $(this).html()){
             alert('Towar ' + $(this).html() + " juz zostal dodany!");
-            return;
+            isDuplicateEntry = true;
+            return false; //serio jquery?!?!
         }
     });
          
-
-    var row = `
+    if (!isDuplicateEntry) {
+        var row = `
         <tr>
             <td>` + nazwaTowaru.value + `</td>
             <td>` + kodTowaru.value + `</td>
@@ -215,12 +216,18 @@ function gituwa(){
             <td>` + zaznaczoneOpcje + `</td>
             <td>` + zaznaczonaOcena + `</td>
             <td>` + zdjecie.value + `</td>
+            <td>` + '<button type="button" class="btn btn-info" onclick="productDelete(this)">❌</button>' + `</td>
+            <td>` + '<button type="button" class="btn btn-info" onclick="productDelete(this)">📝</button>' + `</td>
         </tr>`;
-    
+
     $row = $(row),
     resort = true;
     $('#myTable')
       .find('tbody').append($row)
       .trigger('addRows', [$row, resort]);
-      
+    
+    
+    } else {
+        isDuplicateEntry = false;
+    }
 }
