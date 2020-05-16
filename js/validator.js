@@ -1,4 +1,33 @@
 var isDuplicateEntry = false;
+function clearTable(){
+    document.getElementById("towar_name").value = "";
+    document.getElementById("input_code").value = "";
+    document.getElementById("netto_price").value = "";
+    document.getElementById("inputVAT").value = "";
+    document.getElementById("inputPriceBrutto").value = "";
+    $('#inputCategory').val(1);
+    document.getElementById("photo").value = "domyślne zdjęcie";
+
+    $('#option1').prop('checked', false); // Unchecks it
+    $('#option2').prop('checked', false); // Unchecks it
+    $('#option3').prop('checked', false); // Unchecks it
+    $('#option4').prop('checked', false); // Unchecks it
+    $('#option5').prop('checked', false); // Unchecks it
+
+    $('#rating1').prop('checked', false); // Unchecks it
+    $('#rating2').prop('checked', false); // Unchecks it
+    $('#rating3').prop('checked', false); // Unchecks it
+    $('#rating4').prop('checked', false); // Unchecks it
+    $('#rating5').prop('checked', false); // Unchecks it
+    
+    $(".form-group row").removeClass("invalid-feedback valid-feedback is-invalid is-valid");
+    $(".form-control").removeClass("invalid-feedback valid-feedback is-invalid is-valid");
+
+    $("#optionFeedback").removeClass("invalid-feedback valid-feedback");
+    $("#optionFeedback").html("");
+
+}
+
 function sprawdzTowarName() {
     var formularz_obj = document.getElementById("towar_name");
     var t_name = formularz_obj.value;
@@ -217,7 +246,7 @@ function gituwa(){
             <td>` + zaznaczonaOcena + `</td>
             <td>` + zdjecie.value + `</td>
             <td>` + '<button type="button" class="btn btn-info" onclick="productDelete(this)">❌</button>' + `</td>
-            <td>` + '<button type="button" class="btn btn-info" onclick="productDelete(this)">📝</button>' + `</td>
+            <td>` + '<button type="button" class="btn btn-info" onclick="productEdit(this)">📝</button>' + `</td>
         </tr>`;
 
     $row = $(row),
@@ -227,6 +256,7 @@ function gituwa(){
       .trigger('addRows', [$row, resort]);
     
     
+    clearTable();
     } else {
         isDuplicateEntry = false;
     }
