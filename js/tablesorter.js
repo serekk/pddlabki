@@ -3,7 +3,7 @@ $(function () {
     $("#myTable").tablesorter({
         theme: 'blue',
         headers: {
-            '.kodTowaru, .stawkaVAT, .kategoriaTowarowa, .opcjeTowaru, .zdjecie, .usun, .edytuj': {
+            '.kodTowaru, .stawkaVAT, .kategoriaTowarowa, .opcjeTowaru, .zdjecie, .usun, .edytuj, .dodaj': {
                 sorter: false
             }
         }
@@ -39,7 +39,6 @@ $(document).ready(function () {
     });
 
 });
-
 
 function productDelete(row) {
     $(row).parents("tr").remove();

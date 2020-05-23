@@ -247,6 +247,7 @@ function gituwa(){
             <td>` + zdjecie.value + `</td>
             <td>` + '<button type="button" class="btn btn-info" onclick="productDelete(this)">❌</button>' + `</td>
             <td>` + '<button type="button" class="btn btn-info" onclick="productEdit(this)">📝</button>' + `</td>
+            <td>` + '<button type="button" class="btn btn-info" onclick="productAdd(this)">➕</button>' + `</td>
         </tr>`;
 
     $row = $(row),
