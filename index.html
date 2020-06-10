@@ -20,6 +20,8 @@
     <script src="js/tablesorter.js"></script>
     <script type="text/javascript" src="js/validator.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/loadJson.js"></script>
+
 
     <title>lab01</title>
 </head>
@@ -197,6 +199,13 @@
                     </div>
                 </form>
 
+                <fieldset>
+                    <h3>załaduj dane z json</h3>
+                    <input type='file' id='fileinput'>
+                    <input type='button' id='btnLoad' value="ładuj" class="btn btn-primary" onclick="loadFile();"">
+                </fieldset>
+
+
                 <!-- tabela -->
                 <table id="myTable" class="tablesorter tablesorter-green">
                     <thead>
@@ -277,7 +286,8 @@
                     <div class="form-group row">
                         <label for="modalShippingOptions" class="col-sm-2 col-form-label">wysyłka:</label>
                         <div class="col-sm-10">
-                            <select id="modalShippingOptions" class="form-control" onchange="updateSelectedShippingOption()">
+                            <select id="modalShippingOptions" class="form-control"
+                                onchange="updateSelectedShippingOption()">
                                 <option value="9.90">poczta - cena 9,90 PLN</option>
                                 <option value="19.90">kurier - cena 19,90 PLN</option>
                                 <option value="0">odbiór osobisty - za darmo</option>

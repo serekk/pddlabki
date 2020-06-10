@@ -1,5 +1,5 @@
 var isDuplicateEntry = false;
-function clearTable(){
+function clearInputs(){
     document.getElementById("towar_name").value = "";
     document.getElementById("input_code").value = "";
     document.getElementById("netto_price").value = "";
@@ -257,7 +257,7 @@ function gituwa(){
       .trigger('addRows', [$row, resort]);
     
     
-    clearTable();
+    clearInputs();
     } else {
         isDuplicateEntry = false;
     }

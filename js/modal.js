@@ -79,7 +79,7 @@ function updateModelTable() {
     currentCart.forEach(function (item, i) {
         table += "<tr>" + "<td>" + item.name + "</td>" +
             "<td>" + item.price + " PLN" + "</td>" +
-            "<td>" + "<input type=\"number\" style=\"width: 50px\" id=\"itemQuantity\" value=\"" + item.quantity + "\">" + "</td>" +
+            "<td>" + "<input type=\"number\" min=\"1\" style=\"width: 50px\" id=\"itemQuantity\" value=\"" + item.quantity + "\">" + "</td>" +
             "<td>" + item.quantity * item.price + " PLN" + "</td>" + "</tr>";
         totalPrice += item.quantity * item.price;
     })

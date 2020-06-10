@@ -162,6 +162,6 @@ function updateCells(row){
       .trigger("sorton", [usersTable.get(0).config.sortList])
       .trigger("appendCache")
       .trigger("applyWidgets");
-    clearTable();
-
+    
+      clearInputs();
 }

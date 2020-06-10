@@ -1,0 +1,171 @@
+[
+    {
+        "nazwaTowaru": "osram",
+        "kodTowaru": "21-37",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 1,
+        "opcjeTowaru": [
+            "option1",
+            "option2"
+        ],
+        "ocenaTowaru": "rating1",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+    
+    {
+        "nazwaTowaru": "osram2",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+    
+    {
+        "nazwaTowaru": "osram3",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+    
+    {
+        "nazwaTowaru": "osram4",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+
+    {
+        "nazwaTowaru": "osram5",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+
+    {
+        "nazwaTowaru": "osram6",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+
+    {
+        "nazwaTowaru": "osram7",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+
+    {
+        "nazwaTowaru": "osram8",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+    
+    {
+        "nazwaTowaru": "osram9",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    },
+    
+    {
+        "nazwaTowaru": "osram10",
+        "kodTowaru": "21-35",
+        "cena": {
+            "netto": 420.00,
+            "vat": 69,
+            "brutto": 709.8
+        },
+        "kategoriaTowarowa": 2,
+        "opcjeTowaru": [
+            "option2",
+            "option3"
+        ],
+        "ocenaTowaru": "rating5",
+        "zdjecie": "https://www.eelektryka.com/2835-large_default/osram-%C5%BCar%C3%B3wka-led-a60-e27-9w-barwa-zimna.jpg"
+    }
+]
