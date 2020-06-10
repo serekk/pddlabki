@@ -101,7 +101,7 @@ function updateCells(row){
     
     for (notGucci of gucci) {
         if(notGucci){
-            alert("gosciu...");
+            alert("pola nie spełniają wymogów");
             return;
         }
     }
