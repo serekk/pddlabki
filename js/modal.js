@@ -28,8 +28,9 @@ const inputHandler = function () {
 }
 
 function productAdd(row) {
-    let nazwaTowaru = $row.find("td:nth-child(1)").text();
-    let cenaBrutto = $row.find("td:nth-child(5)").text();
+    console.log($(row).find("td:nth-child(1)").val());
+    let nazwaTowaru = $(row).closest("tr").find("td:nth-child(1)").text();
+    let cenaBrutto = $(row).closest("tr").find("td:nth-child(5)").text();
     let currentCart = localStorage.getItem('koszyk');
 
     currentCart = JSON.parse(currentCart)

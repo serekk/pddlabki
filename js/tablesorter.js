@@ -54,15 +54,15 @@ function productEdit(row) {
     document.querySelector('#addOrEdit').innerText = 'zapisz zmiany';
 
 
-    let firstRow = $row.find("td:nth-child(1)");
-    let secondRow = $row.find("td:nth-child(2)");
-    let thirdRow = $row.find("td:nth-child(3)");
-    let fourthRow = $row.find("td:nth-child(4)");
-    let fifthRow = $row.find("td:nth-child(5)");
-    let sixthRow = $row.find("td:nth-child(6)");
-    let seventhRow = $row.find("td:nth-child(7)");
-    let eightRow = $row.find("td:nth-child(8)");
-    let ninthRow = $row.find("td:nth-child(9)");
+    let firstRow = $(row).closest("tr").find("td:nth-child(1)");
+    let secondRow = $(row).closest("tr").find("td:nth-child(2)");
+    let thirdRow = $(row).closest("tr").find("td:nth-child(3)");
+    let fourthRow = $(row).closest("tr").find("td:nth-child(4)");
+    let fifthRow = $(row).closest("tr").find("td:nth-child(5)");
+    let sixthRow = $(row).closest("tr").find("td:nth-child(6)");
+    let seventhRow = $(row).closest("tr").find("td:nth-child(7)");
+    let eightRow = $(row).closest("tr").find("td:nth-child(8)");
+    let ninthRow = $(row).closest("tr").find("td:nth-child(9)");
 
 
     document.getElementById("towar_name").value = firstRow.text();
@@ -107,15 +107,15 @@ function updateCells(row){
     }
 
     
-    let firstRow = $row.find("td:nth-child(1)");
-    let secondRow = $row.find("td:nth-child(2)");
-    let thirdRow = $row.find("td:nth-child(3)");
-    let fourthRow = $row.find("td:nth-child(4)");
-    let fifthRow = $row.find("td:nth-child(5)");
-    let sixthRow = $row.find("td:nth-child(6)");
-    let seventhRow = $row.find("td:nth-child(7)");
-    let eightRow = $row.find("td:nth-child(8)");
-    let ninthRow = $row.find("td:nth-child(9)");
+    let firstRow = $(row).closest("tr").find("td:nth-child(1)");
+    let secondRow = $(row).closest("tr").find("td:nth-child(2)");
+    let thirdRow = $(row).closest("tr").find("td:nth-child(3)");
+    let fourthRow = $(row).closest("tr").find("td:nth-child(4)");
+    let fifthRow = $(row).closest("tr").find("td:nth-child(5)");
+    let sixthRow = $(row).closest("tr").find("td:nth-child(6)");
+    let seventhRow = $(row).closest("tr").find("td:nth-child(7)");
+    let eightRow = $(row).closest("tr").find("td:nth-child(8)");
+    let ninthRow = $(row).closest("tr").find("td:nth-child(9)");
 
     let nazwaTowaru = document.getElementById("towar_name");
     let kodTowaru = document.getElementById("input_code");

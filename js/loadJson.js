@@ -25,6 +25,7 @@ function addToTable(list) {
             resort = true;
         $('#myTable')
             .find('tbody').append($row)
+            .trigger('addRows', [$row, resort]);
     }
 
     $('#myTable')
