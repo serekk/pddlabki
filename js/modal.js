@@ -67,7 +67,6 @@ function productAdd(row) {
 
 function modalBuy() {
     localStorage.removeItem('koszyk');
-    $('#cartModal').modal('hide');
     alert("usunięto koszyk");
 }
 
